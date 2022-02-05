@@ -37,21 +37,21 @@ Option 2 may be more suitable for simple application, but needs the /dev/i2c-1 t
     dtparam=i2c1_baudrate=1000000
     dtoverlay=stmvl53l5cx
 ### compile the device tree blob (kernel mode only)
-    $ cd vl53l5cx-uld-driver/kernel
+    $ cd kernel
     $ make dtb
     $ sudo reboot
 ### compile the test examples, the platform adaptation layer and the uld driver
-    $ nano vl53l5cx-uld-driver/user/test/Makefile
+    $ nano user/test/Makefile
     Enable or disable the STMVL53L5CX_KERNEL cflags option depending on the wished uld driver mode : with a kernel module of fully in user.
     $ cd vl53l5cx-driver/user/test
     $ make
 ### compile the kernel module (kernel mode only)
-    $ cd vl53l5cx-uld-driver/kernel
+    $ cd kernel
     $ make clean
     $ make
     $ sudo make insert
 ### run the test application menu
-    $ cd vl53l5cx-uld-driver/user/test
+    $ cd user/test
     $ ./menu
 
 
